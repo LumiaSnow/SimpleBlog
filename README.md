@@ -1,2 +1,1 @@
-# SimpleBlog
-A Simple Blog by Flask
+gunicorn app:app -c gunicorn.conf.py
