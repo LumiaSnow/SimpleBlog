@@ -1,6 +1,6 @@
-# Run Nginx on Docker
+# Run Flask web server in Docker
 
-December 17, 2019 by Meepo, Nginx
+December 18, 2019 by Meepo, Python
 
 ---
 
