@@ -21,26 +21,24 @@
             -ms-user-select: none;
             user-select: none;
         }
-
+        
         @media (min-width: 768px) {
             .bd-placeholder-img-lg {
                 font-size: 3.5rem;
             }
         }
-
+        
         .card {
             margin-top: 5px;
         }
-
+        
         .blog-main a {
-            font-size: 2.0vw;
+            font-size: 1.5rem;
             font-weight: bolder;
             color: black;
-
         }
     </style>
     <script type="text/javascript">
-
         function getQueryStringByName(name) {
             var result = location.search.match(new RegExp("[\?\&]" + name + "=([^\&]+)", "i"));
             if (result == null || result.length < 1) {
@@ -62,7 +60,7 @@
             $.ajax({
                 url: url,
                 async: false,
-                success: function (data, textStatus, xhr) {
+                success: function(data, textStatus, xhr) {
                     posts = JSON.parse(data)["posts"];
                 }
             });
@@ -81,7 +79,7 @@
             $.ajax({
                 url: "/blog/catagories",
                 async: false,
-                success: function (data, textStatus, xhr) {
+                success: function(data, textStatus, xhr) {
                     catagories = JSON.parse(data)["catagories"];
                 }
             });
@@ -90,7 +88,7 @@
             });
         }
 
-        window.onload = function () {
+        window.onload = function() {
             loadPosts();
             loadCatagories();
         };
@@ -102,8 +100,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="/">Meepo's Blog</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07"
-                aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -155,11 +152,14 @@
                         <li><a href="#">Facebook</a></li>
                     </ol>
                 </div> -->
-            </aside><!-- /.blog-sidebar -->
+            </aside>
+            <!-- /.blog-sidebar -->
 
-        </div><!-- /.row -->
+        </div>
+        <!-- /.row -->
 
-    </main><!-- /.container -->
+    </main>
+    <!-- /.container -->
 
     <footer class="blog-footer">
         <div class="container">

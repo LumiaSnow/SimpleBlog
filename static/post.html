@@ -19,7 +19,7 @@
             -ms-user-select: none;
             user-select: none;
         }
-
+        
         @media (min-width: 768px) {
             .bd-placeholder-img-lg {
                 font-size: 3.5rem;
@@ -27,7 +27,6 @@
         }
     </style>
     <script type="text/javascript">
-
         function getQueryStringByName(name) {
             var result = location.search.match(new RegExp("[\?\&]" + name + "=([^\&]+)", "i"));
             if (result == null || result.length < 1) {
@@ -36,12 +35,12 @@
             return result[1];
         }
 
-        window.onload = function () {
+        window.onload = function() {
             file_name = getQueryStringByName("file_name");
             catagory = getQueryStringByName("catagory");
             $.ajax({
                 url: "/blog/" + catagory + "/" + file_name,
-                success: function (data, textStatus, xhr) {
+                success: function(data, textStatus, xhr) {
                     $(".blog-post").append(data);
                 }
             });
@@ -54,8 +53,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="/">Meepo's Blog</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07"
-                aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -81,13 +79,15 @@
     <main role="main" class="container">
         <div class="row">
             <div class="col-md-12 blog-main">
-                <div class="blog-post">
+                <div class="blog-post markdown-body">
 
                 </div>
             </div>
-        </div><!-- /.row -->
+        </div>
+        <!-- /.row -->
 
-    </main><!-- /.container -->
+    </main>
+    <!-- /.container -->
 
     <footer class="blog-footer">
         <div class="container">
