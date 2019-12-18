@@ -68,8 +68,8 @@ cp -r somefolder1 /root/somefolder/
 rm test.txt
 ```
 
-删除文件夹
+删除文件夹,-f表示无需确认直接删除，慎用
 
 ```bash
-rm -r somefolder1
+rm -rf somefolder1
 ```

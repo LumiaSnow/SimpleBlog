@@ -10,7 +10,7 @@ December 17, 2019 by Meepo, Nginx
 docker pull nginx
 ```
 
-## 2.启动Nginx镜像
+## 2.启动Nginx容器
 
 nginx镜像的默认端口是80，外部端口可自己设定。
 
