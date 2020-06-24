@@ -2,28 +2,24 @@
 # -*- coding: utf-8 -*-
 
 import urllib.parse
-from flask import Flask, request, redirect, send_from_directory, make_response
+from flask import Flask, request
 import json
 from services.MarkdownService import MarkdownService
 from services.FileService import FileService
 import os
 import uuid
+from flask_cors import CORS
 
-app = Flask(__name__, static_url_path="/blog")
-
-
-@app.route('/blog', methods=['GET'])
-def index():
-    return redirect("/blog/index.html")
+app = Flask(__name__)
 
 
-@app.route('/blog/<article_type>/<article_name>', methods=['GET'])
-def article(article_type, article_name):
+@app.route('/api/blog/<article_type>/<article_name>', methods=['GET'])
+def GetArticle(article_type, article_name):
     mks = MarkdownService()
-    return mks.GetArticleHtml(article_type, article_name)
+    return json.dumps({"post": mks.GetArticleHtml(article_type, article_name)} ) 
 
 
-@app.route('/blog/articles', methods=['GET'])
+@app.route('/api/blog/articles', methods=['GET'])
 def GetArticles():
     catagory = ""
     if "catagory" in request.args:
@@ -39,16 +35,17 @@ def GetArticles():
             modify_time = fs.get_FileModifyTime(filepath)
             file_catagory = dirpath.split('/')[-1].split('\\')[-1]
             posts.append({
-                "file_name": filename.replace(".md", ""),
+                "name": filename.replace(".md", ""),
                 "catagory": file_catagory,
-                "modify_time": modify_time
+                "modify_time": modify_time,
+                "author": "Meepo"
             })
     posts.sort(key=lambda x: x["modify_time"], reverse=True)
     result = {"posts": posts}
     return json.dumps(result)
 
 
-@app.route('/blog/catagories', methods=['GET'])
+@app.route('/api/blog/catagories', methods=['GET'])
 def GetCatagories():
     folder_path = "./articles"
     catagories = {"catagories": (
@@ -57,4 +54,5 @@ def GetCatagories():
 
 
 if __name__ == "__main__":
+    CORS(app, supports_credentials=True)
     app.run(debug=True)

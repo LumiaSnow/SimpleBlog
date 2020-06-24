@@ -2,3 +2,4 @@ Flask
 Markdown
 gunicorn
 gevent
+flask_cors

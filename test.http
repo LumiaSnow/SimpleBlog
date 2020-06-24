@@ -1,0 +1,13 @@
+GET http://meeposoft.cn/api/blog/articles
+
+
+POST http://meeposoft.cn/api/blog/articles
+Content-Type: application/json
+
+{
+   "ip": "10.188.103.193", 
+    "event_type": "LoginQRCodeRequest", 
+    "serial_number": "CNHH12102", 
+    "app_type": "LoginApp", 
+    "model_type": "e-STUDIO3508LP_Loops-LP35"
+}
