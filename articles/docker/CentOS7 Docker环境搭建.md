@@ -126,4 +126,16 @@ curl -L https://github.com/docker/machine/releases/download/v0.16.2/docker-machi
     chmod +x /tmp/docker-machine &&
     sudo cp /tmp/docker-machine /usr/local/bin/docker-machine
 
+sudo ln -s /usr/local/bin/docker-machine /usr/bin/docker-machine
+
+sudo chmod -R 777 /usr/local/bin/docker-machine
+
+```
+
+### 2.4 安装 Docker Plugin vieux/sshfs
+
+用于swarm模式下使用共享文件存储
+
+```bash
+docker plugin install --grant-all-permissions vieux/sshfs
 ```
