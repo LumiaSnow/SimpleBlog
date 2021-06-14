@@ -69,5 +69,11 @@ git remote rm origin
 
 # 添加git
 git remote add origin git@github.com:LumiaSnow/SimpleBlog.git
+
+# 注：GITHUG使用https方式时，每次提交都需要输入用户名密码；可以改成ssh方式来解决这个问题，需要在github的设置中添加ssh key
+# 创建ssh key
+ssh-keygen -t rsa -C "xxxxxxxxx"
+cd ~/.ssh
+cat id_rsa.pub
 ```
 
