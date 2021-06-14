@@ -3,7 +3,9 @@
 ## 1 设置用户名密码
 
 ```bash
-git config --global credential.helper store
+
+git config --global user.name "your username"
+git config --global user.password "your password"
 ```
 
 ## 2 拉远程仓库代码并合并
