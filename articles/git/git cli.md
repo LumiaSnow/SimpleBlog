@@ -58,3 +58,16 @@ git checkout -b v3.0hotfix v3.0
 
 ```
 
+## 6 设置git地址
+
+```bash
+# 查看git仓库
+git remote -v
+
+# 删除git仓库
+git remote rm origin
+
+# 添加git
+git remote add origin git@github.com:LumiaSnow/SimpleBlog.git
+```
+
