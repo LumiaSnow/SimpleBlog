@@ -53,8 +53,11 @@ git tag v3.0
 # 提交tag到远程分支
 git push origin v3.0
 
-# 远程tag创建分支
+# 从tag创建分支
 git checkout -b v3.0hotfix v3.0
+
+# 从当前分支创建分支
+git checkout -b v3.0hotfix
 
 ```
 

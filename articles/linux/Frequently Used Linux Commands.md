@@ -73,3 +73,53 @@ rm test.txt
 ```bash
 rm -rf somefolder1
 ```
+
+## 7 查看内存占用
+
+```bash
+free –m
+```
+
+## 8 查看磁盘占用
+
+```bash
+# 查看整体
+df –h
+
+# 查看目录
+du -h --max-depth=1
+
+
+```
+
+## 9 服务systemctl
+
+```bash
+# 列出所有service
+systemctl list-units --type=service --all
+# 列出所有的系统服务
+systemctl
+# 列出所有启动unit
+systemctl list-units
+# 列出所有启动文件
+systemctl list-unit-files
+# 列出所有service类型的unit
+systemctl list-units –type=service –all
+# 列出 cpu电源管理机制的服务
+systemctl list-units –type=service –all grep cpu
+# 列出所有target
+systemctl list-units –type=target –all
+# 查看当前运行级别target(mult-user)启动了哪些服务
+systemctl list-dependencies
+```
+
+## 10 修改密码
+
+```bash
+# 修改当前用户密码
+passwd
+
+# 修改指定用户密码
+passwd www
+```
+
