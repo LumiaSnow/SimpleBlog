@@ -123,3 +123,34 @@ passwd
 passwd www
 ```
 
+## 11 查找文件
+
+```bash
+find / -name rabbitmq-defaults
+```
+
+## 12 tail
+
+```bash
+# 查看某个文件的最后300行
+tail xxxx.log -n 300
+```
+
+## 13 路由追踪 traceroute
+
+```bash
+yum install traceroute
+traceroute libprint.sdyu.edu.cn
+
+# on windows
+tracert libprint.sdyu.edu.cn
+```
+
+## 14 解压文件
+
+```bash
+# tgz
+tar -zxvf harbor-offline-installer-v2.3.0.tgz
+
+```
+

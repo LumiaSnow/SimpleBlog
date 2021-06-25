@@ -21,3 +21,16 @@ yum list installed
 yum list installed [package]
 ```
 
+## 3 YUM被占用问题
+
+执行yum命令，报错：
+
+Existing lock /var/run/yum.pid: another copy is running as pid 2096.
+
+解决：
+
+```bash
+rm -f /var/run/yum.pid
+/sbin/service yum-updatesd restart
+```
+
